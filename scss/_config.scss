@@ -1,11 +1,11 @@
 $white: #fff;
 $black: #000;
 $primary: #444;
-$headline-secondary: #eece1a;
+$secondary: #eece1a;
 
-//variables for the images
 $show-home-image: true;
 $home-image: url(https://fillmurray.com/g/1200/1000);
+$portrait-image: url(https://fillmurray.com/g/300/300);
 $background-opacity: 0.9;
 
 @mixin easeOut {
