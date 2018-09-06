@@ -4,9 +4,10 @@ $primary: #444;
 $secondary: #eece1a;
 
 $show-home-image: true;
-$home-image: url(https://fillmurray.com/g/1200/1000);
-$portrait-image: url(https://fillmurray.com/g/300/300);
-$background-opacity: 0.9;
+$home-image: url(../img/bgImageBlog.jpg);
+$portrait-image: url(../img/portraitBlog.jpg);
+$blog-hero-image: url(../img/blogPage.jpg);
+$background-opacity: 0.8;
 
 @mixin easeOut {
   transition: all 0.5s ease-out;

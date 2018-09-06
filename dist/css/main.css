@@ -24,7 +24,6 @@
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0.9;
   visibility: hidden; }
   .menu__main.show {
     visibility: visible; }
@@ -58,7 +57,9 @@
   .menu__brandingPortrait {
     width: 250px;
     height: 250px;
-    background: url(https://fillmurray.com/g/300/300);
+    background: url(../img/portraitBlog.jpg);
+    background-size: cover;
+    background-position-x: -45px;
     border-radius: 50%;
     border: solid 3px #eece1a; }
 
@@ -119,13 +120,83 @@
     height: 25vh;
     transform: translate3d(100%, 0, 0); }
     .menu__brandingPortrait {
-      background: url(https://fillmurray.com/g/150/150);
+      background: url(../img/portraitBlog.jpg);
       width: 150px;
-      height: 150px; } }
+      height: 150px;
+      background-size: cover;
+      background-position-x: -30px; } }
 
 @media screen and (max-width: 500px) {
   main#home h1 {
     margin-top: 10vh; } }
+
+.grid {
+  background: rgba(68, 68, 68, 0.5);
+  display: grid;
+  grid-template-rows: 40vh auto 10em;
+  grid-template-columns: 1fr minmax(40em, 5fr) minmax(15em, 2fr) 1fr;
+  grid-template-areas: 'hero hero hero hero' '. content sidebar .' 'footer footer footer footer';
+  grid-column-gap: 1.5em;
+  grid-row-gap: 1.5em; }
+  @media screen and (max-width: 768px) {
+    .grid {
+      grid-template-areas: 'hero' 'content' 'sidebar' 'footer';
+      grid-template-columns: 1fr; } }
+  .grid .hero {
+    background: #444;
+    opacity: 0.9;
+    color: #fff;
+    text-align: center;
+    grid-area: hero; }
+    .grid .hero__bgImage {
+      position: absolute;
+      background: url(../img/blogPage.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 40vh;
+      z-index: -1;
+      opacity: 0.3; }
+    .grid .hero__headline {
+      padding: 1em;
+      font-size: 5em; }
+    .grid .hero__subheadline {
+      font-size: 2em; }
+  .grid .blog {
+    grid-area: content; }
+    .grid .blog__card {
+      background: rgba(68, 68, 68, 0.5);
+      display: grid;
+      grid-template: 'img title' min-content 'img content' auto / 1fr 3fr;
+      grid-column-gap: 1.5em;
+      padding: 1.5em;
+      margin-top: 1.5em; }
+      @media screen and (max-width: 768px) {
+        .grid .blog__card {
+          grid-template: 'img' 'title' 'content' / 1fr; } }
+    .grid .blog img {
+      grid-area: img;
+      max-width: 100%; }
+    .grid .blog__cardTitle {
+      font-size: 2em;
+      grid-area: title;
+      margin: 0;
+      font-weight: 300; }
+    .grid .blog__cardContent {
+      grid-area: content; }
+      .grid .blog__cardContent a {
+        color: #444;
+        background: #fff;
+        padding: 0.5em; }
+        .grid .blog__cardContent a:hover {
+          background: #eece1a;
+          transition: all 0.5s ease-out; }
+  .grid aside {
+    grid-area: sidebar;
+    background: rgba(68, 68, 68, 0.5);
+    padding: 1.2em;
+    margin-top: 1.5em; }
 
 html {
   font-size: 10px; }
@@ -134,14 +205,13 @@ html {
   box-sizing: border-box; }
 
 body {
-  background: #444;
   color: #fff;
   height: 100%;
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
   body#body__bgImage {
-    background: url(https://fillmurray.com/g/1200/1000);
+    background: url(../img/bgImageBlog.jpg);
     background-attachment: fixed;
     background-size: cover; }
     body#body__bgImage::after {
@@ -152,7 +222,7 @@ body {
       width: 100%;
       height: 100%;
       z-index: -1;
-      background: rgba(68, 68, 68, 0.9); }
+      background: rgba(68, 68, 68, 0.8); }
 
 h1,
 h2,
@@ -167,8 +237,7 @@ h3 {
   h2.heading__sm,
   h3.heading__sm {
     margin-bottom: 2em;
-    padding: 0.2em 1em;
-    background: rgba(73, 73, 73, 0.5);
+    padding: 0.2em 0.2em;
     font-size: 2em; }
 
 a {
