@@ -9,7 +9,7 @@
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
-    background: #fff;
+    background: #eece1a;
     transition: all 0.5s ease-out; }
   .menu__btn.close {
     transform: rotate(180deg); }
@@ -131,7 +131,7 @@
     margin-top: 10vh; } }
 
 .grid {
-  background: rgba(68, 68, 68, 0.5);
+  background: rgba(68, 68, 68, 0.2);
   display: grid;
   grid-template-rows: 40vh auto 10em;
   grid-template-columns: 1fr minmax(40em, 5fr) minmax(15em, 2fr) 1fr;
@@ -171,24 +171,38 @@
       grid-template: 'img title' min-content 'img content' auto / 1fr 3fr;
       grid-column-gap: 1.5em;
       padding: 1.5em;
-      margin-top: 1.5em; }
+      margin-top: 1.5em;
+      border-top: 5px solid #eece1a; }
       @media screen and (max-width: 768px) {
         .grid .blog__card {
           grid-template: 'img' 'title' 'content' / 1fr; } }
     .grid .blog img {
       grid-area: img;
       max-width: 100%; }
+      @media screen and (max-width: 768px) {
+        .grid .blog img {
+          margin: 0 auto; } }
     .grid .blog__cardTitle {
       font-size: 2em;
       grid-area: title;
       margin: 0;
       font-weight: 300; }
+      @media screen and (max-width: 768px) {
+        .grid .blog__cardTitle {
+          text-align: center; } }
     .grid .blog__cardContent {
-      grid-area: content; }
+      grid-area: content;
+      font-size: 1.4em; }
+      @media screen and (max-width: 768px) {
+        .grid .blog__cardContent {
+          text-align: center; } }
       .grid .blog__cardContent a {
         color: #444;
         background: #fff;
         padding: 0.5em; }
+        @media screen and (max-width: 768px) {
+          .grid .blog__cardContent a {
+            text-align: center; } }
         .grid .blog__cardContent a:hover {
           background: #eece1a;
           transition: all 0.5s ease-out; }
@@ -257,6 +271,8 @@ main {
   height: 100%; }
   main .icons {
     margin-top: 1em; }
+    main .icons .fab.fa-2x {
+      font-size: 6em; }
     main .icons a {
       padding: 0.4em; }
       main .icons a:hover {

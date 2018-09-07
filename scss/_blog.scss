@@ -1,5 +1,5 @@
 .grid {
-  background: rgba($primary, 0.5);
+  background: rgba($primary, 0.2);
   display: grid;
   grid-template-rows: 40vh auto 10em;
   grid-template-columns: 1fr minmax(40em, 5fr) minmax(15em, 2fr) 1fr;
@@ -59,6 +59,7 @@
       grid-column-gap: 1.5em;
       padding: 1.5em;
       margin-top: 1.5em;
+      border-top: 5px solid $secondary;
 
       @include mediaMd {
         grid-template:
@@ -71,6 +72,9 @@
     img {
       grid-area: img;
       max-width: 100%;
+      @include mediaMd {
+        margin: 0 auto;
+      }
     }
 
     &__cardTitle {
@@ -78,15 +82,25 @@
       grid-area: title;
       margin: 0;
       font-weight: 300;
+      @include mediaMd {
+        text-align: center;
+      }
     }
 
     &__cardContent {
       grid-area: content;
+      font-size: 1.4em;
+      @include mediaMd {
+        text-align: center;
+      }
 
       a {
         color: $primary;
         background: $white;
         padding: 0.5em;
+        @include mediaMd {
+          text-align: center;
+        }
         &:hover {
           background: $secondary;
           @include easeOut;
