@@ -1,7 +1,3 @@
-:root {
-  --yellow: #ffc600;
-}
-
 .hero {
   background: $primary;
   opacity: 0.9;
@@ -30,10 +26,6 @@
   }
 }
 
-html {
-  font-family: Cambria, Cochin, Georgia, 'Times New Roman', Times, serif;
-}
-
 p {
   line-height: 1.8;
 }
@@ -42,69 +34,79 @@ img {
   max-width: 100%;
 }
 
-a {
-  color: black;
-  text-decoration: underline wavy var(--yellow);
-}
-
-h1,
-h2 {
-  font-size: 80px;
-  font-style: italic;
-  font-weight: 100;
-  margin: 0;
-}
-
 .post {
   display: grid;
   max-width: 1000px;
   margin: 0 auto;
   grid-gap: 10px 50px;
-  grid-template-columns: 3fr 12fr 5fr;
+  grid-template-columns: 5fr 12fr 5fr;
+  font-family: Cambria, Cochin, Georgia, 'Times New Roman', Times, serif;
   font-size: 2em;
   color: $primary;
-}
-
-.post > * {
-  grid-column: 2 / -2;
-}
-
-.post > figure {
-  margin: 0;
-  grid-column: 1 / -1;
-}
-
-figcaption {
-  font-size: 10px;
-}
-
-.post > blockquote {
-  grid-column: 1 / -1;
-  font-size: 60px;
-  font-style: italic;
-  text-align: center;
-  margin: 0;
-}
-
-.tip {
-  font-size: 0.8em;
-  background: #fafafa;
-  padding: 10px;
-  grid-row: span 5;
-  align-self: start;
-
-  & a {
-    color: $secondary;
+  @include mediaMd {
+    grid-template-columns: 1fr;
+    padding: 0 1em;
   }
-}
 
-.tip-left {
-  grid-column: 1 / span 1;
-  text-align: right;
-  border-right: 2px solid $secondary;
-}
+  h2 {
+    font-size: 4em;
+    font-style: italic;
+    font-weight: 100;
+    margin: 0;
+  }
 
-.tip-right {
-  grid-column: span 1 / -1;
-  border-left: 2px solid var(--yellow);
+  > * {
+    grid-column: 2 / -2;
+  }
+
+  .tip {
+    font-size: 0.8em;
+    background: rgba($primary, 0.4);
+    padding: 1em;
+    grid-row: span 5;
+    align-self: start;
+
+    a {
+      color: $primary;
+      text-decoration: underline $secondary;
+    }
+  }
+
+  .tip-left {
+    grid-column: 1 / span 1;
+    text-align: right;
+    border-right: 2px solid $secondary;
+    @include mediaMd {
+      border-top: 2px solid $secondary;
+      border-right: none;
+      text-align: center;
+    }
+  }
+
+  .tip-right {
+    grid-column: span 1 / -1;
+    border-left: 2px solid $secondary;
+    @include mediaMd {
+      border-top: 2px solid $secondary;
+      border-left: none;
+      text-align: center;
+    }
+  }
+
+  > figure {
+    margin: 0;
+    grid-column: 1 / -1;
+  }
+
+  figcaption {
+    font-size: 10px;
+  }
+
+  > blockquote {
+    grid-column: 1 / -1;
+    font-size: 3em;
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+  }
 }

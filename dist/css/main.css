@@ -213,9 +213,6 @@
     margin-top: 1.5em;
     border-top: 5px solid #eece1a; }
 
-:root {
-  --yellow: #ffc600; }
-
 .hero {
   background: #444;
   opacity: 0.9;
@@ -238,69 +235,69 @@
   .hero__subheadline {
     font-size: 2em; }
 
-html {
-  font-family: Cambria, Cochin, Georgia, 'Times New Roman', Times, serif; }
-
 p {
   line-height: 1.8; }
 
 img {
   max-width: 100%; }
 
-a {
-  color: black;
-  text-decoration: underline wavy var(--yellow); }
-
-h1,
-h2 {
-  font-size: 80px;
-  font-style: italic;
-  font-weight: 100;
-  margin: 0; }
-
 .post {
   display: grid;
   max-width: 1000px;
   margin: 0 auto;
   grid-gap: 10px 50px;
-  grid-template-columns: 3fr 12fr 5fr;
+  grid-template-columns: 5fr 12fr 5fr;
+  font-family: Cambria, Cochin, Georgia, 'Times New Roman', Times, serif;
   font-size: 2em;
   color: #444; }
-
-.post > * {
-  grid-column: 2 / -2; }
-
-.post > figure {
-  margin: 0;
-  grid-column: 1 / -1; }
-
-figcaption {
-  font-size: 10px; }
-
-.post > blockquote {
-  grid-column: 1 / -1;
-  font-size: 60px;
-  font-style: italic;
-  text-align: center;
-  margin: 0; }
-
-.tip {
-  font-size: 0.8em;
-  background: #fafafa;
-  padding: 10px;
-  grid-row: span 5;
-  align-self: start; }
-  .tip a {
-    color: #eece1a; }
-
-.tip-left {
-  grid-column: 1 / span 1;
-  text-align: right;
-  border-right: 2px solid #eece1a; }
-
-.tip-right {
-  grid-column: span 1 / -1;
-  border-left: 2px solid var(--yellow); }
+  @media screen and (max-width: 768px) {
+    .post {
+      grid-template-columns: 1fr;
+      padding: 0 1em; } }
+  .post h2 {
+    font-size: 4em;
+    font-style: italic;
+    font-weight: 100;
+    margin: 0; }
+  .post > * {
+    grid-column: 2 / -2; }
+  .post .tip {
+    font-size: 0.8em;
+    background: rgba(68, 68, 68, 0.4);
+    padding: 1em;
+    grid-row: span 5;
+    align-self: start; }
+    .post .tip a {
+      color: #444;
+      text-decoration: underline #eece1a; }
+  .post .tip-left {
+    grid-column: 1 / span 1;
+    text-align: right;
+    border-right: 2px solid #eece1a; }
+    @media screen and (max-width: 768px) {
+      .post .tip-left {
+        border-top: 2px solid #eece1a;
+        border-right: none;
+        text-align: center; } }
+  .post .tip-right {
+    grid-column: span 1 / -1;
+    border-left: 2px solid #eece1a; }
+    @media screen and (max-width: 768px) {
+      .post .tip-right {
+        border-top: 2px solid #eece1a;
+        border-left: none;
+        text-align: center; } }
+  .post > figure {
+    margin: 0;
+    grid-column: 1 / -1; }
+  .post figcaption {
+    font-size: 10px; }
+  .post > blockquote {
+    grid-column: 1 / -1;
+    font-size: 3em;
+    font-style: italic;
+    text-align: center;
+    margin: 0; }
 
 html {
   font-size: 10px; }
