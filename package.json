@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Responsive Blog Website",
   "main": "index.js",
-  "homepage": "https://benschodie.github.io/benschodie",
+  "homepage": "https://Benschodie.github.io/benschodie",
   "scripts": {
     "sass": "node-sass -w scss/ -o dist/css/ --recursive",
     "deploy": "gh-pages -d dist"
