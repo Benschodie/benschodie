@@ -1,0 +1,20 @@
+.contact {
+  color: $primary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__headline {
+    font-size: 4em;
+  }
+
+  &__social {
+    font-size: 2em;
+    a {
+      color: $primary;
+      &:visited {
+        color: inherit;
+      }
+    }
+  }
+}
