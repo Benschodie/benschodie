@@ -31,6 +31,9 @@ h3 {
 
   &.heading__lg {
     font-size: 8em;
+    @include mediaMd {
+      font-size: 5em;
+    }
   }
 
   &.heading__sm {

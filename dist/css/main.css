@@ -334,6 +334,11 @@ h3 {
   h2.heading__lg,
   h3.heading__lg {
     font-size: 8em; }
+    @media screen and (max-width: 768px) {
+      h1.heading__lg,
+      h2.heading__lg,
+      h3.heading__lg {
+        font-size: 5em; } }
   h1.heading__sm,
   h2.heading__sm,
   h3.heading__sm {
