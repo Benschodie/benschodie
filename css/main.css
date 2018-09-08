@@ -299,6 +299,20 @@ img {
     text-align: center;
     margin: 0; }
 
+.contact {
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .contact__headline {
+    font-size: 4em; }
+  .contact__social {
+    font-size: 2em; }
+    .contact__social a {
+      color: #444; }
+      .contact__social a:visited {
+        color: inherit; }
+
 html {
   font-size: 10px; }
 
