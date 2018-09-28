@@ -70,7 +70,7 @@ TypeWriter.prototype.type = function() {
   let typeSpeed = 300;
 
   if (this.isDeleting) {
-    typeSpeed /= 150;
+    typeSpeed /= 2;
   }
 
   // If word ist complete
