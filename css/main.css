@@ -133,33 +133,38 @@
 .grid {
   background: rgba(68, 68, 68, 0.2);
   display: grid;
-  grid-template-rows: 40vh auto 10em;
+  grid-template-rows: auto auto 10em;
   grid-template-columns: 1fr minmax(40em, 5fr) minmax(15em, 2fr) 1fr;
-  grid-template-areas: 'hero hero hero hero' '. content sidebar .' 'footer footer footer footer';
+  grid-template-areas: "hero hero hero hero" ". content sidebar ." "footer footer footer footer";
   grid-column-gap: 1.5em;
   grid-row-gap: 1.5em; }
   @media screen and (max-width: 768px) {
     .grid {
-      grid-template-areas: 'hero' 'content' 'sidebar' 'footer';
+      grid-template-areas: "hero" "content" "sidebar" "footer";
       grid-template-columns: 1fr; } }
   .grid .hero {
-    background: #444;
-    opacity: 0.9;
+    position: relative;
     color: #fff;
     text-align: center;
-    grid-area: hero; }
-    .grid .hero__bgImage {
+    grid-area: hero;
+    background: url(../img/blogPage.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    z-index: -1; }
+    .grid .hero::after {
+      content: "";
       position: absolute;
-      background: url(../img/blogPage.jpg);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      width: 100%;
-      height: 40vh;
-      z-index: -1;
-      opacity: 0.3; }
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #444;
+      opacity: 0.7;
+      z-index: -1; }
     .grid .hero__headline {
-      padding: 1em;
+      padding: 0.5em;
       font-size: 5em; }
     .grid .hero__subheadline {
       font-size: 2em; }
@@ -168,14 +173,14 @@
     .grid .blog__card {
       background: rgba(68, 68, 68, 0.5);
       display: grid;
-      grid-template: 'img title' min-content 'img content' auto / 1fr 3fr;
+      grid-template: "img title" min-content "img content" auto / 1fr 3fr;
       grid-column-gap: 1.5em;
       padding: 1.5em;
       margin-top: 1.5em;
       border-top: 5px solid #eece1a; }
       @media screen and (max-width: 768px) {
         .grid .blog__card {
-          grid-template: 'img' 'title' 'content' / 1fr; } }
+          grid-template: "img" "title" "content" / 1fr; } }
     .grid .blog img {
       grid-area: img;
       max-width: 100%; }
@@ -214,21 +219,26 @@
     border-top: 5px solid #eece1a; }
 
 .hero {
-  background: #444;
-  opacity: 0.9;
+  position: relative;
   color: #fff;
   text-align: center;
-  height: 40vh; }
-  .hero__bgImage {
+  height: 40vh;
+  background: url(../img/blogPage.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  z-index: -1; }
+  .hero::after {
+    content: "";
     position: absolute;
-    background: url(../img/blogPage.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 40vh;
-    z-index: -1;
-    opacity: 0.3; }
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #444;
+    opacity: 0.7;
+    z-index: -1; }
   .hero__headline {
     padding: 1em;
     font-size: 5em; }
@@ -247,7 +257,7 @@ img {
   margin: 0 auto;
   grid-gap: 10px 50px;
   grid-template-columns: 5fr 12fr 5fr;
-  font-family: Cambria, Cochin, Georgia, 'Times New Roman', Times, serif;
+  font-family: Cambria, Cochin, Georgia, "Times New Roman", Times, serif;
   font-size: 2em;
   color: #444; }
   @media screen and (max-width: 768px) {
@@ -321,16 +331,18 @@ html {
 
 body {
   color: #fff;
-  height: 100%;
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
-  body#body__bgImage {
+
+.frontpage {
+  height: 100%; }
+  .frontpage#frontpage__bgImage {
     background: url(../img/bgImageBlog.jpg);
     background-attachment: fixed;
     background-size: cover; }
-    body#body__bgImage::after {
-      content: '';
+    .frontpage#frontpage__bgImage::after {
+      content: "";
       position: absolute;
       top: 0;
       right: 0;
@@ -374,7 +386,12 @@ span.heading--secondary {
 
 main {
   padding: 4em;
-  height: 100%; }
+  height: 100vh;
+  overflow: hidden; }
+  main .heading__txtType > .txt {
+    border-right: 0.02em solid #eece1a; }
+  main h1 {
+    margin-top: 20vh; }
   main .icons {
     margin-top: 1em; }
     main .icons .fab.fa-2x {
@@ -384,7 +401,3 @@ main {
       main .icons a:hover {
         color: #eece1a;
         transition: all 0.5s ease-out; }
-  main#home {
-    overflow: hidden; }
-    main#home h1 {
-      margin-top: 20vh; }
