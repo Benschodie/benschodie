@@ -15,13 +15,12 @@ $background-opacity: 0.8;
 
 @mixin background {
   @if $show-home-image {
-    &#body__bgImage {
+    &#frontpage__bgImage {
       background: $home-image;
       background-attachment: fixed;
       background-size: cover;
-
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         right: 0;

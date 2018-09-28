@@ -32,6 +32,7 @@ function toggleMenu() {
     showMenu = false;
   }
 }
+<<<<<<< HEAD
 
 // ******************
 // Type Writer Effect
@@ -101,3 +102,5 @@ function init() {
   // Init TypeWriter
   new TypeWriter(txtElement, words, wait);
 }
+=======
+>>>>>>> fb24ad861144b1c437904f5482f70b03baf720e5
