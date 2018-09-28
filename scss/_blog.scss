@@ -1,45 +1,50 @@
 .grid {
   background: rgba($primary, 0.2);
   display: grid;
-  grid-template-rows: 40vh auto 10em;
+  grid-template-rows: auto auto 10em;
   grid-template-columns: 1fr minmax(40em, 5fr) minmax(15em, 2fr) 1fr;
   grid-template-areas:
-    'hero hero hero hero'
-    '. content sidebar .'
-    'footer footer footer footer';
+    "hero hero hero hero"
+    ". content sidebar ."
+    "footer footer footer footer";
   grid-column-gap: 1.5em;
   grid-row-gap: 1.5em;
 
   @include mediaMd {
     grid-template-areas:
-      'hero'
-      'content'
-      'sidebar'
-      'footer';
+      "hero"
+      "content"
+      "sidebar"
+      "footer";
     grid-template-columns: 1fr;
   }
 
   .hero {
-    background: $primary;
-    opacity: 0.9;
+    position: relative;
     color: $white;
     text-align: center;
     grid-area: hero;
+    background: $blog-hero-image;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    z-index: -1;
 
-    &__bgImage {
+    &::after {
+      content: "";
       position: absolute;
-      background: $blog-hero-image;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      width: 100%;
-      height: 40vh;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: $primary;
+      opacity: 0.7;
       z-index: -1;
-      opacity: 0.3;
     }
 
     &__headline {
-      padding: 1em;
+      padding: 0.5em;
       font-size: 5em;
     }
     &__subheadline {
@@ -54,8 +59,8 @@
       background: rgba($primary, 0.5);
       display: grid;
       grid-template:
-        'img title' min-content
-        'img content' auto / 1fr 3fr;
+        "img title" min-content
+        "img content" auto / 1fr 3fr;
       grid-column-gap: 1.5em;
       padding: 1.5em;
       margin-top: 1.5em;
@@ -63,9 +68,9 @@
 
       @include mediaMd {
         grid-template:
-          'img'
-          'title'
-          'content' / 1fr;
+          "img"
+          "title"
+          "content" / 1fr;
       }
     }
 

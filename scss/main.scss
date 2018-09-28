@@ -1,9 +1,9 @@
-@import 'config';
-@import 'menu';
-@import 'mobile';
-@import 'blog';
-@import 'blogpost';
-@import 'about';
+@import "config";
+@import "menu";
+@import "mobile";
+@import "blog";
+@import "blogpost";
+@import "about";
 
 html {
   font-size: 10px;
@@ -14,12 +14,15 @@ html {
 }
 
 body {
-  @include background;
   color: $white;
-  height: 100%;
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
+}
+
+.frontpage {
+  @include background;
+  height: 100%;
 }
 
 // Headings
@@ -62,7 +65,12 @@ span.heading--secondary {
 
 main {
   padding: 4em;
-  height: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  h1 {
+    margin-top: 20vh;
+  }
 
   .icons {
     margin-top: 1em;
@@ -78,14 +86,6 @@ main {
         color: $secondary;
         @include easeOut();
       }
-    }
-  }
-
-  &#home {
-    // TODO: delete it if you want to adapt the homepage
-    overflow: hidden;
-    h1 {
-      margin-top: 20vh;
     }
   }
 }

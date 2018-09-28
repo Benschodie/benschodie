@@ -32,5 +32,3 @@ function toggleMenu() {
     showMenu = false;
   }
 }
-
-// console.log(menuBtn);
