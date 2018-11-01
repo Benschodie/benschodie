@@ -2,7 +2,7 @@
   position: relative;
   color: $white;
   text-align: center;
-  height: 40vh;
+  height: 280px;
   background: $blog-hero-image;
   background-position: center;
   background-repeat: no-repeat;
@@ -10,7 +10,7 @@
   width: 100%;
   z-index: -1;
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -22,11 +22,11 @@
   }
 
   &__headline {
-    padding: 1em;
-    font-size: 5em;
+    padding: 0.5em;
+    font-size: 6em;
   }
   &__subheadline {
-    font-size: 2em;
+    font-size: 4em;
   }
 }
 
@@ -44,7 +44,7 @@ img {
   margin: 0 auto;
   grid-gap: 10px 50px;
   grid-template-columns: 5fr 12fr 5fr;
-  font-family: Cambria, Cochin, Georgia, "Times New Roman", Times, serif;
+  font-family: Cambria, Cochin, Georgia, 'Times New Roman', Times, serif;
   font-size: 2em;
   color: $primary;
   @include mediaMd {

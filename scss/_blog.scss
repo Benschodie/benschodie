@@ -1,10 +1,9 @@
 .grid {
-  background: rgba($primary, 0.2);
+  background-image: url(../img/full-bloom.png);
   display: grid;
-  grid-template-rows: auto auto 10em;
+  grid-template-rows: auto 10em;
   grid-template-columns: 1fr minmax(40em, 5fr) minmax(15em, 2fr) 1fr;
   grid-template-areas:
-    'hero hero hero hero'
     '. content sidebar .'
     'footer footer footer footer';
   grid-column-gap: 1.5em;
@@ -12,7 +11,6 @@
 
   @include mediaMd {
     grid-template-areas:
-      'hero'
       'content'
       'sidebar'
       'footer';
