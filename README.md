@@ -13,7 +13,7 @@
 
 - 📝 I regulary write articles on [lifeofanoob.tech](lifeofanoob.tech)
 
-- 💬 Ask me about **all about css**
+- 💬 Ask me **all about css**
 
 - 📫 How to reach me **benjamin.konopka@icloud.com**
 
